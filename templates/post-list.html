@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title> My Personal Blog</title>
+    </head>
+    <body>
+        <h2>
+            First Post
+        </h2>
+        <p> Hello Everyone!</p>
+        <p> 2024-10-12</p>
+        <hr>
+        {% for post in data a%}
+        <h2>
+            {{post.title}}
+        </h2>
+        <p> {{post.content}}</p>
+        <p>{{post.publish_date}}</p>
+        <hr>
+        {% endfor %}
+    </body>
+</html>
