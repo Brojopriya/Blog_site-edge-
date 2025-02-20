@@ -1,21 +1,72 @@
-<html>
-    <head>
-        <title> My Personal Blog</title>
-    </head>
-    <body>
-        <h2>
-            First Post
-        </h2>
-        <p> Hello Everyone!</p>
-        <p> 2024-10-12</p>
-        <hr>
-        {% for post in data a%}
-        <h2>
-            {{post.title}}
-        </h2>
-        <p> {{post.content}}</p>
-        <p>{{post.publish_date}}</p>
-        <hr>
-        {% endfor %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 25%;
+            background: url('image.png') no-repeat center center/cover;
+            color: rgb(249, 244, 244);
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .sidebar h2 {
+            margin: 0;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .content {
+            width: 75%;
+            padding: 50px;
+            background: #bbe8c3;
+        }
+        .post {
+            background: rgb(223, 240, 212);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="profile.jpg" alt="Profile Picture">
+        <h2>BROJOPRIYA NAG</h2>
+        <p>Journalist, writer, & videographer</p>
+        <a href="#">Home</a>
+        <a href="#">Video</a>
+        <a href="#">Nederlands</a>
+        <a href="#">English</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="content">
+        <h1>Hello,</h1>
+        <h2>I am a journalist, writer, & videomaker.</h2>
+        <p>You can get to know me better on my About page, or scroll down to read my stories. I work in both English and Dutch!</p>
+        <div class="post">
+            <h2>First Post</h2>
+            <p>Hello Everyone!</p>
+            <p>2024-10-12</p>
+        </div>
+    </div>
+</body>
 </html>
