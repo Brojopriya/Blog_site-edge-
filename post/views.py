@@ -25,6 +25,15 @@ def post_list_view(request):
 
     return render (request,"post-list.html",context)
 
+
+def portfolio_view(request):
+    portfolio_data= Post.objects.all().order_by('-id')[:3]
+
+    context={
+        "data":portfolio_data
+    }
+    return render(request,"portfolio.html",context)
+
 def post_page_view(request,id):
     post_data= Post.objects.get(id=id)
     context={
