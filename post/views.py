@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from post.models import Post
+from post.models import comment
 from django.views.generic import TemplateView
 
 
@@ -36,7 +37,9 @@ def portfolio_view(request):
 
 def post_page_view(request,id):
     post_data= Post.objects.get(id=id)
+    comments = comment.objects.filter(post_id=id).select_related("user")
     context={
-        "post":post_data
+        "post":post_data,
+        "comments":comments,
     }
     return render(request,"post_page.html",context)
