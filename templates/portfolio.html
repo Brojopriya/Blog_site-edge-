@@ -38,13 +38,14 @@
             padding: 50px;
             background: #bbe8c3;
         }
-        .post {
+        .article {
             background: rgb(223, 240, 212);
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
         }
     </style>
+    <title>My Personal Blog</title>
 </head>
 <body>
     <div class="sidebar">
@@ -65,11 +66,7 @@
          <section id="blog">
         <h2>Recent Blog Posts</h2>
 
-        <div class="post">
-            <h2>First Post</h2>
-            <p>Hello Everyone!</p>
-            <p>2024-10-12</p>
-        </div>
+        
         {% for post in data %}
         <div class="article">
             <a href="http://127.0.0.1:8000/post_page/{{post.id}}" >

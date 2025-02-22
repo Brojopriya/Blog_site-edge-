@@ -17,14 +17,12 @@ class PostListTemplate(TemplateView):
 # Create your views here.
 
 def post_list_view(request):
-
-
-    post_data = Post.objects.all()
-    context={
-
+    post_data = Post.objects.all()  # Fetch all posts
+    context = {
+        'data': post_data  # Pass the post data to the template
     }
 
-    return render (request,"post-list.html",context)
+    return render(request, "post-list.html", context)
 
 
 def portfolio_view(request):
