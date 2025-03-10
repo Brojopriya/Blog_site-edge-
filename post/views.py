@@ -2,6 +2,8 @@ from django.shortcuts import render
 from post.models import Post
 from post.models import comment
 from django.views.generic import TemplateView
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 
 
 
@@ -34,7 +36,14 @@ def portfolio_view(request):
     return render(request,"portfolio.html",context)
 
 def post_page_view(request,id):
-    post_data= Post.objects.get(id=id)
+    print("This massage" , request.method)
+    try:
+        post_data= Post.objects.get(id=id)
+    except ObjectDoesNotExist:
+        raise Http404("page not found")
+
+
+
     comments = comment.objects.filter(post_id=id).select_related("user")
     context={
         "post":post_data,
