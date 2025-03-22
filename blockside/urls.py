@@ -20,10 +20,12 @@ from post.views import post_list_view,portfolio_view,post_page_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("post-list",post_list_view),
+    path("post-list",post_list_view,name="post-list"),
     path('portfolio/',portfolio_view),
      path("post_page/<int:id>",post_page_view,name="one-post"),
      path('users/',include("users.urls")),
+     
+
 
 ]
 

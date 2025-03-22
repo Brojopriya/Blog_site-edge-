@@ -2,10 +2,10 @@
 
 {% block abcd %}
 
-<h2>Register</h2>
-    <form method="POST" action="{% url 'signup' %}">
+<h2>Login</h2>
+    <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
     </form>
 {% endblock %}
