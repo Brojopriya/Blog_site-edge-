@@ -153,4 +153,7 @@ DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
     "SHOW_TOOLBAR_CALLBACK": show_toolbar,
 }
+LOGIN_REDIRECT_URL = 'post-list'
+LOGIN_URL = 'login'
+
 
